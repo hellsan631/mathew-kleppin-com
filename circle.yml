@@ -1,0 +1,18 @@
+machine:
+  environment:
+    NODE_ENV: development
+    DISABLE_RAVEN: true
+
+  node:
+    version: 6.2.1
+
+dependencies:
+  cache_directories:
+    - "angular/client/src/vendor"
+
+deployment:
+  production:
+    branch: master
+    heroku:
+      appname: targetproof-mirror
+

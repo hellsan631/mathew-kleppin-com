@@ -1,0 +1,12 @@
+@import "../../css/scss/partials/functions";
+
+card {
+  .card {
+    @include materialBounce();
+
+    &.open {
+      background: transparent;
+      box-shadow: 0px 0px 0px rgba(0,0,0,0);
+    }
+  }
+}
