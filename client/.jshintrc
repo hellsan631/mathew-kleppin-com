@@ -29,6 +29,10 @@
     "Papa": true,
     "FileReader":true,
     "requestAnimationFrame": true,
-    "document": true
+    "document": true,
+    "TweenLite": true,
+    "Expo": true,
+    "TimelineLite": true,
+    "Power2": true
   }
 }

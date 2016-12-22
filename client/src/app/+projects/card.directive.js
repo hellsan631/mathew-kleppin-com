@@ -74,8 +74,7 @@
     };
 
     function link(scope, element) {
-      //ProjectService._bindCard()
-      console.log('index', element[0].getAttribute('index'));
+      
     }
   }
 

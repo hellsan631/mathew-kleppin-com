@@ -119,11 +119,7 @@
         card: instance
       };
 
-      event.setAttribute('index', index);
-
-      console.log('i', index);
-      console.log('card', card);
-      console.log('element', event);
+      card.setAttribute('index', index);
 
       var cardImage = $(card).find(SELECTORS.cardImage);
       var cardClose = $(card).find(SELECTORS.cardClose);
@@ -160,7 +156,10 @@
 
         sequence.add(closeCard);
         sequence.add(tweenOtherCards, position);
-        card._el.classList.remove('open');
+
+        setTimeout(() => {
+          card._el.classList.remove('open');
+        }, 2500);
       }
 
       sequence.play();
