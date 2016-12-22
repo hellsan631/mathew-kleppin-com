@@ -159,7 +159,7 @@
 
         setTimeout(() => {
           card._el.classList.remove('open');
-        }, 2500);
+        }, 1500);
       }
 
       sequence.play();

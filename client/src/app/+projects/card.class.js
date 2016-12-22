@@ -41,7 +41,7 @@ var Card = (function(window, undefined) {
     this.isOpen = false;
 
     this._TL = null;
-  };
+  }
 
   /**
    * Open card.
@@ -60,9 +60,9 @@ var Card = (function(window, undefined) {
     // Compose sequence and use duration to overlap tweens.
     this._TL.add(slideContentDown);
     this._TL.add(clipImageIn, 0);
-    this._TL.add(floatContainer, '-=' + clipImageIn.duration() * 0.6);
+    this._TL.add(floatContainer, '-=' + clipImageIn.duration() * 0.5);
     // this._TL.add(clipImageOut, '-=' + floatContainer.duration() * 0.3);
-    this._TL.add(slideContentUp/*, '-=' + clipImageOut.duration() * 0.6*/);
+    this._TL.add(slideContentUp, '-=' + clipImageOut.duration() * 0.4);
 
     this.isOpen = true;
 
@@ -133,6 +133,8 @@ var Card = (function(window, undefined) {
 
     }, this);
 
+    this.reverseTween = TL;
+
     return TL;
   };
 
@@ -165,7 +167,7 @@ var Card = (function(window, undefined) {
       overflow: 'hidden'
     });
 
-    TL.to([this._container, track], 1.5 * timeRate, {
+    TL.to([this._container, track], 1.25 * timeRate, {
       width: windowW,
       height: '100%',
       x: windowW / 2,
@@ -219,7 +221,7 @@ var Card = (function(window, undefined) {
    */
   Card.prototype.closeCard = function() {
 
-    TweenLite.to(this._container, 0.4 * timeRate, {
+    TweenLite.to(this._container, 0.8 * timeRate, {
       scrollTo: {
         y: 0
       },
