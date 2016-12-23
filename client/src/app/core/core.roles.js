@@ -7,7 +7,7 @@
 
   /* @ngInject */
   function RoleConfig(PermRoleStore) {
-    PermRoleStore.defineRole('MEMBER', ['isLoggedIn']);
+    PermRoleStore.defineRole('admin', ['isLoggedIn']);
   }
 
 })();

@@ -107,7 +107,7 @@
 
       var elements = $(SELECTORS.card);
 
-      $.each(elements, function(index, card) {
+      $.each(elements, function(card, index) {
         _bindCard(card, index, this);
       });
     }

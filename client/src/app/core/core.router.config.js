@@ -83,47 +83,11 @@
 
       // Fixes bugged overlay (if overlay is open on route change)
       overlay.css('display', 'none');
-
-      /**
-       * If our app is loaded and we have an initial state, we want to trigger
-       * the scrollTop animations, so that we aren't scrolling top when
-       * we have a saved page position from back/forward/reload location changes
-       */
-
-      if (stateloaded) {
-        startAnimations();
-      } else {
-        stateloaded = true;
-      }
     });
 
     body.on('click', '.lean-overlay', function() {
       overlay.css('display', 'none');
     });
-
-    function startAnimations() {
-      if (pageAnimation) return;
-
-      pageAnimation = true;
-
-      $rootScope.$on('animStart', function($event, element, speed) {
-        if (animating) return;
-
-        var pos = body.scrollTop();
-
-        animating = true;
-        
-        $timeout(function() {
-          if (pos > 10 && body.scrollTop() === pos) {
-            body.animate({ scrollTop: 0 }, 100);
-          }
-
-          $timeout(function() {
-            animating = false;
-          }, 100);
-        }, 16);
-      });
-    }
   }
 
 })();

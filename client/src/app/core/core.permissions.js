@@ -10,7 +10,7 @@
     PermPermissionStore
       .definePermission(
         'isLoggedIn', 
-        () => { return true; }
+        () => { return false; }
       );
   }
 

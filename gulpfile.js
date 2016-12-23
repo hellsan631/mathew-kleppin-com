@@ -90,6 +90,14 @@ const config = {
           sourcePath + 'app/**/*.js'
         ]
       }
+    },
+    extraVendors: {
+      css: [
+        sourcePath + 'js/**/*.css'
+      ],
+      js: [
+        sourcePath + 'js/**/*.js'
+      ]
     }
   },
   sass: {
@@ -207,7 +215,7 @@ gulp.task('build:clean', function() {
 gulp.task('build:css', ['build:css:vendor', 'build:css:app']);
 
 gulp.task('build:css:vendor', function(){
-  return gulp.src(bowerCSS)
+  return gulp.src(bowerCSS.concat(config.inject.extraVendors.css))
     .pipe(plumber(onError))
     .pipe(concat(dest.cssVendorFile))
     .pipe(cssmin())
@@ -240,7 +248,7 @@ gulp.task('build:js:vendor', function() {
     return file.indexOf('.js') > -1;
   });
 
-  return gulp.src(vendorJs)
+  return gulp.src(vendorJs.concat(config.inject.extraVendors.js))
     .pipe(plumber(onError))
     .pipe(sourcemaps.init())
     .pipe(uglify())
@@ -310,7 +318,12 @@ gulp.task('inject', function () {
   return gulp.src(config.inject.target)
     .pipe(plumber(onError))
     .pipe(inject(
-      gulp.src(bowerFiles(bowerOptions), {read: false}),
+      gulp.src(
+        bowerFiles(bowerOptions)
+          .concat(config.inject.extraVendors.css)
+          .concat(config.inject.extraVendors.js), 
+        {read: false}
+      ),
       {name: 'bower', relative: true}
     ))
     .pipe(inject(

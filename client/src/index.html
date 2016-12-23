@@ -6,10 +6,10 @@
       <base href="/">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Card Expansion Effect - Demo 4</title>
-      <meta name="description" content="Card Expansion Effect with SVG clipPath" />
-      <meta name="keywords" content="clipPath, svg, effect, layout, expansion, images, grid, polygon" />
-      <meta name="author" content="Claudio Calautti for Codrops" />
+      <title>Mathew Kleppin</title>
+      <meta name="description" content="As a Senior Full-Stack Developer, i'm always looking to bring innovative ideas to life." />
+      <meta name="keywords" content="senior, fullstack, web, developer, designer, creative, professional" />
+      <meta name="author" content="Mathew Kleppin" />
       <link rel="shortcut icon" href="data:image/webp;base64,UklGRjQCAABXRUJQVlA4TCcCAAAvD8ADEK8CRwBAA9XL1labbfMAje4SbW08gw5ge3S7rb2+beMabmPbVpXz3Q3twV0rcC/DU5cKoBZrAeI3RBo6GRSA22rbjuf7Y6t1OttozQEygp0J/pMZXKdPmZNKC9hWZVRyEEmSIgdz6PieHXwAAP///wsAfAHAHwBcAOADAH4AIAekW/qgtL5+v+3wWmxUhefGtnFzOG8MRdaLe7PRCZSX22s53Z12KI3o79j7ul5dV7cnqpspYO4NPfnWgx0XkxP7PF8/UWbhpjd49stR01Q+SyDQORkOs+XHOWo7RrKj0a3Z/1TTFypGvJxw2runJ5ErmBvSzORtJoMS+jTxkF3ALNgBmZ+98lePTVS6vMFBBpHC22TI+3KNQi1wBhFFo6OA6YSdEFB6C2cDTEegQ+BMWSDKFAgVDUMxhFDhpWwIMoWItzAwHhgGL23BLrUJKxNyTe3t6A4dPM7FpVtz5ZU/AwTZttM2kr4gL8wpMzNDmJlh/1uRZC8iov/JvCClrSLBQpwMQoY4c1zCpmMISc4swRUPEmkExEQuD/t4efiYSVZgjaCzSgHV0dX3w/fJDpbUY7mzXx4uvke1h9MBlC52m/Wb1vqjPP66L0Hb9N9yti1vbsutt58ktELl/+K3MX+qz/vt16wixHb30fPe5HU1Wbx8RoRBYoBkfX3+Pk2Vro8ZwcZh77ZHe88pELNcIngZoBSXnDlOBv4ahjgLCVLaKhLMAwA=">
       <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
 
@@ -27,6 +27,7 @@
       <link rel="stylesheet" href="vendor/materialize/bin/materialize.css">
       <link rel="stylesheet" href="vendor/animate.css/animate.css">
       <link rel="stylesheet" href="vendor/sweetalert2/dist/sweetalert2.css">
+      <link rel="stylesheet" href="js/vendors/redactor.css">
       <!-- endinject -->
 
       <!-- inject:css -->
@@ -36,6 +37,7 @@
       <link rel="stylesheet" href="css/pattern-4.css">
       <link rel="stylesheet" href="css/styles.css">
       <link rel="stylesheet" href="css/+projects/card.css">
+      <link rel="stylesheet" href="css/+login/login.css">
       <link rel="stylesheet" href="css/widgets/actionButton.css">
       <link rel="stylesheet" href="css/widgets/fillheight.css">
       <link rel="stylesheet" href="css/widgets/footer.css">
@@ -51,18 +53,15 @@
       <!-- endinject -->
   </head>
 
-  <body ng-class="$root.modalOpen ? 'modal-open' : ''" ng-cloak class="demo-4">
+  <body ng-class="$root.modalOpen ? 'modal-open' : ''" ng-cloak>
+    
+    <ui-view name="sidebar"></ui-view>
+
     <ui-view name="main"
       class="anim-in-out"
       data-anim-sync="true"
       data-anim-speed="1000">
     </ui-view>
-
-    <script src="js/vendors/trianglify.min.js"></script>
-    <script src="js/vendors/TweenMax.min.js"></script>
-    <script src="js/vendors/ScrollToPlugin.min.js"></script>
-    <script src="js/vendors/cash.min.js"></script>
-    <script src="js/Card-polygon-4.js"></script>
 
     <!-- bower:js -->
     <script src="vendor/es6-promise/es6-promise.js"></script>
@@ -80,15 +79,19 @@
     <script src="vendor/angular-permission/dist/angular-permission-ng.js"></script>
     <script src="vendor/localforage/dist/localforage.js"></script>
     <script src="vendor/angular-materialize/src/angular-materialize.js"></script>
+    <script src="vendor/angular-redactor/angular-redactor.js"></script>
+    <script src="vendor/angular-resource/angular-resource.js"></script>
+    <script src="vendor/ng-file-upload/ng-file-upload.js"></script>
     <script src="vendor/sweetalert2/dist/sweetalert2.js"></script>
     <script src="vendor/angular-localforage/dist/angular-localForage.js"></script>
+    <script src="js/vendors/ScrollToPlugin.min.js"></script>
+    <script src="js/vendors/TweenMax.min.js"></script>
+    <script src="js/vendors/cash.min.js"></script>
+    <script src="js/vendors/redactor.min.js"></script>
+    <script src="js/vendors/trianglify.min.js"></script>
     <!-- endinject -->
 
     <!-- inject:js -->
-    <script src="app/blocks/exception/exception.module.js"></script>
-    <script src="app/blocks/exception/exception.service.js"></script>
-    <script src="app/blocks/exception/exception.const.js"></script>
-    <script src="app/blocks/exception/exception-handler.provider.js"></script>
     <script src="app/blocks/logger/logger.module.js"></script>
     <script src="app/blocks/logger/promise-logger.service.js"></script>
     <script src="app/blocks/logger/logger.service.js"></script>
@@ -108,19 +111,29 @@
     <script src="app/core/lb-services.js"></script>
     <script src="app/core/core.module.js"></script>
     <script src="app/core/httpLoader.service.js"></script>
-    <script src="app/core/element.service.js"></script>
     <script src="app/core/core.router.config.js"></script>
     <script src="app/core/core.roles.js"></script>
     <script src="app/core/core.permissions.js"></script>
     <script src="app/core/core.constants.js"></script>
     <script src="app/core/core.config.js"></script>
-    <script src="app/core/cache.service.js"></script>
     <script src="app/+projects/projects.module.js"></script>
     <script src="app/+projects/projects.service.js"></script>
     <script src="app/+projects/projects.route.js"></script>
     <script src="app/+projects/projects.controller.js"></script>
     <script src="app/+projects/card.directive.js"></script>
     <script src="app/+projects/card.class.js"></script>
+    <script src="app/+admin/admin.module.js"></script>
+    <script src="app/+admin/list.controller.js"></script>
+    <script src="app/+admin/edit.controller.js"></script>
+    <script src="app/+admin/dashboard.controller.js"></script>
+    <script src="app/+admin/create.controller.js"></script>
+    <script src="app/+admin/admin.sidebar.controller.js"></script>
+    <script src="app/+admin/admin.service.js"></script>
+    <script src="app/+admin/admin.routes.js"></script>
+    <script src="app/+login/login.module.js"></script>
+    <script src="app/+login/loginForm.directive.js"></script>
+    <script src="app/+login/login.routes.js"></script>
+    <script src="app/+login/login.controller.js"></script>
     <script src="app/app.module.js"></script>
     <!-- endinject -->
   </body>

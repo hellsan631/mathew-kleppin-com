@@ -7,7 +7,9 @@
       'app.core',
       'app.widgets',
       /* Content Modules */
-      'app.projects'
+      'app.projects',
+      'app.admin',
+      'app.login'
     ]);
 
 })();

@@ -25,7 +25,6 @@
     $urlRouterProvider.otherwise(function($injector) {
       var $state = $injector.get('$state');
       $state.go('projects');
-      console.log('other');
     });
 
     $uiViewScrollProvider.useAnchorScroll();

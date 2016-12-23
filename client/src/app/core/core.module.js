@@ -8,7 +8,6 @@
       'ngSanitize',
       'ngTouch',
       /* Cross-app Modules */
-      'blocks.exception',
       'blocks.logger',
       /* Router Modules */
       'ui.router',
@@ -18,6 +17,7 @@
       /* 3rd Party Modules */
       'LocalForageModule',
       'ui.materialize',
+      'lbServices'
     ]);
 
 })();
