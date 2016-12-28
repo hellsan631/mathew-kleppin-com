@@ -1,15 +1,16 @@
 @import "partials/functions";
 @import "partials/colors";
 @import "partials/typography";
-@import "partials/animations";
-@import "partials/dialogs";
 @import "partials/grid";
-@import "partials/buttons";
-@import "partials/forms";
 @import "partials/icons";
 
 body {
   background-color: #f5f5f5;
+  font-family: 'Rubik', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Nixie One', serif;
 }
 
 [ng-click] {

@@ -71,8 +71,11 @@ const bowerOptions = {
     bowerJson: __dirname + '/bower.json'
   },
   overrides: {
-    'angular-ui-router-anim-in-out': {
-      main: 'anim-in-out.js'
+    'gsap': {
+      main: [
+        'src/minified/TweenMax.min.js',
+        'src/minified/plugins/ScrollToPlugin.min.js',
+      ]
     }
   }
 };

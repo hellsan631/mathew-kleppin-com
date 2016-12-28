@@ -1,142 +1,221 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html lang="en" class="no-js">
 
-  <head>
-      <meta charset="UTF-8" />
-      <base href="/">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Mathew Kleppin</title>
-      <meta name="description" content="As a Senior Full-Stack Developer, i'm always looking to bring innovative ideas to life." />
-      <meta name="keywords" content="senior, fullstack, web, developer, designer, creative, professional" />
-      <meta name="author" content="Mathew Kleppin" />
-      <link rel="shortcut icon" href="data:image/webp;base64,UklGRjQCAABXRUJQVlA4TCcCAAAvD8ADEK8CRwBAA9XL1labbfMAje4SbW08gw5ge3S7rb2+beMabmPbVpXz3Q3twV0rcC/DU5cKoBZrAeI3RBo6GRSA22rbjuf7Y6t1OttozQEygp0J/pMZXKdPmZNKC9hWZVRyEEmSIgdz6PieHXwAAP///wsAfAHAHwBcAOADAH4AIAekW/qgtL5+v+3wWmxUhefGtnFzOG8MRdaLe7PRCZSX22s53Z12KI3o79j7ul5dV7cnqpspYO4NPfnWgx0XkxP7PF8/UWbhpjd49stR01Q+SyDQORkOs+XHOWo7RrKj0a3Z/1TTFypGvJxw2runJ5ErmBvSzORtJoMS+jTxkF3ALNgBmZ+98lePTVS6vMFBBpHC22TI+3KNQi1wBhFFo6OA6YSdEFB6C2cDTEegQ+BMWSDKFAgVDUMxhFDhpWwIMoWItzAwHhgGL23BLrUJKxNyTe3t6A4dPM7FpVtz5ZU/AwTZttM2kr4gL8wpMzNDmJlh/1uRZC8iov/JvCClrSLBQpwMQoY4c1zCpmMISc4swRUPEmkExEQuD/t4efiYSVZgjaCzSgHV0dX3w/fJDpbUY7mzXx4uvke1h9MBlC52m/Wb1vqjPP66L0Hb9N9yti1vbsutt58ktELl/+K3MX+qz/vt16wixHb30fPe5HU1Wbx8RoRBYoBkfX3+Pk2Vro8ZwcZh77ZHe88pELNcIngZoBSXnDlOBv4ahjgLCVLaKhLMAwA=">
-      <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mathew Kleppin</title>
+    <meta name="description" content="As a Senior Full-Stack Developer, i'm always looking to bring innovative ideas to life." />
+    <meta name="keywords" content="senior, fullstack, web, developer, designer, creative, professional" />
+    <meta name="author" content="Mathew Kleppin" />
+    <link rel="shortcut icon" href="data:image/webp;base64,UklGRjQCAABXRUJQVlA4TCcCAAAvD8ADEK8CRwBAA9XL1labbfMAje4SbW08gw5ge3S7rb2+beMabmPbVpXz3Q3twV0rcC/DU5cKoBZrAeI3RBo6GRSA22rbjuf7Y6t1OttozQEygp0J/pMZXKdPmZNKC9hWZVRyEEmSIgdz6PieHXwAAP///wsAfAHAHwBcAOADAH4AIAekW/qgtL5+v+3wWmxUhefGtnFzOG8MRdaLe7PRCZSX22s53Z12KI3o79j7ul5dV7cnqpspYO4NPfnWgx0XkxP7PF8/UWbhpjd49stR01Q+SyDQORkOs+XHOWo7RrKj0a3Z/1TTFypGvJxw2runJ5ErmBvSzORtJoMS+jTxkF3ALNgBmZ+98lePTVS6vMFBBpHC22TI+3KNQi1wBhFFo6OA6YSdEFB6C2cDTEegQ+BMWSDKFAgVDUMxhFDhpWwIMoWItzAwHhgGL23BLrUJKxNyTe3t6A4dPM7FpVtz5ZU/AwTZttM2kr4gL8wpMzNDmJlh/1uRZC8iov/JvCClrSLBQpwMQoY4c1zCpmMISc4swRUPEmkExEQuD/t4efiYSVZgjaCzSgHV0dX3w/fJDpbUY7mzXx4uvke1h9MBlC52m/Wb1vqjPP66L0Hb9N9yti1vbsutt58ktELl/+K3MX+qz/vt16wixHb30fPe5HU1Wbx8RoRBYoBkfX3+Pk2Vro8ZwcZh77ZHe88pELNcIngZoBSXnDlOBv4ahjgLCVLaKhLMAwA=">
 
-      <!--[if IE]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-      <![endif]-->
-      <script>
-      if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-          var root = document.getElementsByTagName('html')[0];
-          root.setAttribute('class', 'ff');
-      };
-      </script>
-
-      <!-- bower:css -->
-      <link rel="stylesheet" href="vendor/materialize/bin/materialize.css">
-      <link rel="stylesheet" href="vendor/animate.css/animate.css">
-      <link rel="stylesheet" href="vendor/sweetalert2/dist/sweetalert2.css">
-      <link rel="stylesheet" href="js/vendors/redactor.css">
-      <!-- endinject -->
-
-      <!-- inject:css -->
-      <link rel="stylesheet" href="css/card-4.css">
-      <link rel="stylesheet" href="css/demo.css">
-      <link rel="stylesheet" href="css/normalize.css">
-      <link rel="stylesheet" href="css/pattern-4.css">
-      <link rel="stylesheet" href="css/styles.css">
-      <link rel="stylesheet" href="css/+login/login.css">
-      <link rel="stylesheet" href="css/+projects/card.css">
-      <link rel="stylesheet" href="css/+projects/projects.css">
-      <link rel="stylesheet" href="css/widgets/actionButton.css">
-      <link rel="stylesheet" href="css/widgets/fillheight.css">
-      <link rel="stylesheet" href="css/widgets/footer.css">
-      <link rel="stylesheet" href="css/widgets/materialInput.css">
-      <link rel="stylesheet" href="css/widgets/materialSelect.css">
-      <link rel="stylesheet" href="css/widgets/memberCard.css">
-      <link rel="stylesheet" href="css/widgets/memberCardPocket.css">
-      <link rel="stylesheet" href="css/widgets/memberPhoto.css">
-      <link rel="stylesheet" href="css/widgets/modalPane.css">
-      <link rel="stylesheet" href="css/widgets/selectable.css">
-      <link rel="stylesheet" href="css/widgets/selectableGroup.css">
-      <link rel="stylesheet" href="css/widgets/userFab.css">
-      <!-- endinject -->
-  </head>
-
-  <body ng-class="$root.modalOpen ? 'modal-open' : ''" ng-cloak>
-    
-    <ui-view name="sidebar"></ui-view>
-
-    <ui-view name="main"
-      class="anim-in-out"
-      data-anim-sync="true"
-      data-anim-speed="1000">
-    </ui-view>
-
-    <!-- bower:js -->
-    <script src="vendor/es6-promise/es6-promise.js"></script>
-    <script src="vendor/jquery/dist/jquery.js"></script>
-    <script src="vendor/materialize/bin/materialize.js"></script>
-    <script src="vendor/angular/angular.js"></script>
-    <script src="vendor/angular-animate/angular-animate.js"></script>
-    <script src="vendor/angular-sanitize/angular-sanitize.js"></script>
-    <script src="vendor/angular-touch/angular-touch.js"></script>
-    <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="vendor/angular-ui-mask/dist/mask.js"></script>
-    <script src="vendor/angular-ui-router-anim-in-out/anim-in-out.js"></script>
-    <script src="vendor/angular-permission/dist/angular-permission.js"></script>
-    <script src="vendor/angular-permission/dist/angular-permission-ui.js"></script>
-    <script src="vendor/angular-permission/dist/angular-permission-ng.js"></script>
-    <script src="vendor/localforage/dist/localforage.js"></script>
-    <script src="vendor/angular-materialize/src/angular-materialize.js"></script>
-    <script src="vendor/angular-redactor/angular-redactor.js"></script>
-    <script src="vendor/angular-resource/angular-resource.js"></script>
-    <script src="vendor/ng-file-upload/ng-file-upload.js"></script>
-    <script src="vendor/sweetalert2/dist/sweetalert2.js"></script>
-    <script src="vendor/angular-localforage/dist/angular-localForage.js"></script>
-    <script src="js/vendors/ScrollToPlugin.min.js"></script>
-    <script src="js/vendors/TweenMax.min.js"></script>
-    <script src="js/vendors/cash.min.js"></script>
-    <script src="js/vendors/redactor.min.js"></script>
-    <script src="js/vendors/trianglify.min.js"></script>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="vendor/components-font-awesome/css/font-awesome.css">
     <!-- endinject -->
 
-    <!-- inject:js -->
-    <script src="app/blocks/logger/logger.module.js"></script>
-    <script src="app/blocks/logger/promise-logger.service.js"></script>
-    <script src="app/blocks/logger/logger.service.js"></script>
-    <script src="app/blocks/logger/logger.constants.js"></script>
-    <script src="app/widgets/widgets.module.js"></script>
-    <script src="app/widgets/widgets.constants.js"></script>
-    <script src="app/widgets/ngPlaceholder.directive.js"></script>
-    <script src="app/widgets/ngHtmlPattern.directive.js"></script>
-    <script src="app/widgets/materialTime.directive.js"></script>
-    <script src="app/widgets/materialSelect.directive.js"></script>
-    <script src="app/widgets/materialInput.directive.js"></script>
-    <script src="app/widgets/materialDate.directive.js"></script>
-    <script src="app/widgets/materialAvatar.directive.js"></script>
-    <script src="app/widgets/fillheight.directive.js"></script>
-    <script src="app/widgets/actionButton.directive.js"></script>
-    <script src="app/core/raf.polyfill.js"></script>
-    <script src="app/core/lb-services.js"></script>
-    <script src="app/core/core.module.js"></script>
-    <script src="app/core/httpLoader.service.js"></script>
-    <script src="app/core/core.router.config.js"></script>
-    <script src="app/core/core.roles.js"></script>
-    <script src="app/core/core.permissions.js"></script>
-    <script src="app/core/core.constants.js"></script>
-    <script src="app/core/core.config.js"></script>
-    <script src="app/+projects/projects.module.js"></script>
-    <script src="app/+projects/projects.service.js"></script>
-    <script src="app/+projects/projects.route.js"></script>
-    <script src="app/+projects/projects.controller.js"></script>
-    <script src="app/+projects/card.directive.js"></script>
-    <script src="app/+projects/card.class.js"></script>
-    <script src="app/+admin/admin.module.js"></script>
-    <script src="app/+admin/list.controller.js"></script>
-    <script src="app/+admin/edit.controller.js"></script>
-    <script src="app/+admin/dashboard.controller.js"></script>
-    <script src="app/+admin/create.controller.js"></script>
-    <script src="app/+admin/admin.sidebar.controller.js"></script>
-    <script src="app/+admin/admin.service.js"></script>
-    <script src="app/+admin/admin.routes.js"></script>
-    <script src="app/+login/login.module.js"></script>
-    <script src="app/+login/loginForm.directive.js"></script>
-    <script src="app/+login/login.routes.js"></script>
-    <script src="app/+login/login.controller.js"></script>
-    <script src="app/app.module.js"></script>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/card-4.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/pattern-4.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/styles.css">
     <!-- endinject -->
-  </body>
+
+    <!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script>
+    if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+        var root = document.getElementsByTagName('html')[0];
+        root.setAttribute('class', 'ff');
+    };
+    </script>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <!-- trianglify pattern container -->
+      <div class="pattern pattern--hidden"></div>
+
+      <!-- cards -->
+      <div class="wrapper card-wrapper">
+        <div class="card">
+          <div class="card__container card__container--closed">
+            <svg class="card__image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1200"
+              preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <clipPath id="clipPath1">
+                  <polygon class="clip" points="0,1200 0,0 1920,0 1920,1200"></polygon>
+                </clipPath>
+              </defs>
+              <image clip-path="url(#clipPath1)" width="1920" height="1200" xlink:href="img/g.jpg"></image>
+            </svg>
+            <div class="card__content">
+              <i class="card__btn-close fa fa-times"></i>
+              <div class="card__caption">
+                <h2 class="card__title">Tristan and Isolde</h2>
+                <p class="card__subtitle">A modern day love story</p>
+              </div>
+              <div class="card__copy">
+                <div class="meta">
+                  <img class="meta__avatar" src="img/authors/1.png" alt="author01" />
+                  <span class="meta__author">Gerry Sutherland</span>
+                  <span class="meta__date">06/19/2015</span>
+                </div>
+                <p>Business model canvas bootstrapping deployment startup. In A/B testing pivot niche market alpha conversion
+                  startup down monetization partnership business-to-consumer success for investor mass market business-to-business.</p>
+                <p>Release creative social proof influencer iPad crowdsource gamification learning curve network effects monetization.
+                  Gamification business plan mass market www.discoverartisans.com direct mailing ecosystem seed round sales
+                  long tail vesting period.</p>
+                <p>Product management ramen bootstrapping seed round venture holy grail technology backing partner network entrepreneur
+                  beta marketing value proposition. Android stealth conversion scrum project network effects. Creative alpha
+                  long tail conversion stealth growth hacking iteration investor A/B testing prototype customer. Startup
+                  www.discoverartisans.com direct mailing launch party partnership market ramen metrics focus value proposition.</p>
+                <p>Stock infrastructure seed round sales paradigm shift technology user experience focus gamification. Partnership
+                  metrics business plan stealth business-to-business. Deployment graphical user interface monetization. Twitter
+                  incubator scrum project entrepreneur branding burn rate ramen backing paradigm shift virality crowdsource.</p>
+                <p>Social proof MVP ecosystem. Ramen launch party pitch deployment stealth. Vesting period MVP equity. Focus
+                  creative partnership founders iteration agile development infographic.</p>
+                <p>Low hanging fruit burn rate innovator user experience niche market A/B testing creative launch party product
+                  management release. Www.discoverartisans.com influencer business model canvas user experience gamification
+                  paradigm shift startup research &amp; development iPad agile development. Strategy incubator infographic
+                  success marketing buzz A/B testing responsive web design. Traction research &amp; development pitch seed
+                  money venture niche market accelerator network effects.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__container card__container--closed">
+            <svg class="card__image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1200"
+              preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <clipPath id="clipPath2">
+                  <polygon class="clip" points="0,1200 0,0 1920,0 1920,1200"></polygon>
+                </clipPath>
+              </defs>
+              <image clip-path="url(#clipPath2)" width="1920" height="1200" xlink:href="img/h.jpg"></image>
+            </svg>
+            <div class="card__content">
+              <i class="card__btn-close fa fa-times"></i>
+              <div class="card__caption">
+                <h2 class="card__title">About Helen</h2>
+                <p class="card__subtitle">A story about a woman</p>
+              </div>
+              <div class="card__copy">
+                <div class="meta">
+                  <img class="meta__avatar" src="img/authors/2.png" alt="author02" />
+                  <span class="meta__author">Frank Posterius</span>
+                  <span class="meta__date">06/16/2015</span>
+                </div>
+                <p>Business model canvas bootstrapping deployment startup. In A/B testing pivot niche market alpha conversion
+                  startup down monetization partnership business-to-consumer success for investor mass market business-to-business.</p>
+                <p>Release creative social proof influencer iPad crowdsource gamification learning curve network effects monetization.
+                  Gamification business plan mass market www.discoverartisans.com direct mailing ecosystem seed round sales
+                  long tail vesting period.</p>
+                <p>Product management ramen bootstrapping seed round venture holy grail technology backing partner network entrepreneur
+                  beta marketing value proposition. Android stealth conversion scrum project network effects. Creative alpha
+                  long tail conversion stealth growth hacking iteration investor A/B testing prototype customer. Startup
+                  www.discoverartisans.com direct mailing launch party partnership market ramen metrics focus value proposition.</p>
+                <p>Stock infrastructure seed round sales paradigm shift technology user experience focus gamification. Partnership
+                  metrics business plan stealth business-to-business. Deployment graphical user interface monetization. Twitter
+                  incubator scrum project entrepreneur branding burn rate ramen backing paradigm shift virality crowdsource.</p>
+                <p>Social proof MVP ecosystem. Ramen launch party pitch deployment stealth. Vesting period MVP equity. Focus
+                  creative partnership founders iteration agile development infographic.</p>
+                <p>Low hanging fruit burn rate innovator user experience niche market A/B testing creative launch party product
+                  management release. Www.discoverartisans.com influencer business model canvas user experience gamification
+                  paradigm shift startup research &amp; development iPad agile development. Strategy incubator infographic
+                  success marketing buzz A/B testing responsive web design. Traction research &amp; development pitch seed
+                  money venture niche market accelerator network effects.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__container card__container--closed">
+            <svg class="card__image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1200"
+              preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <clipPath id="clipPath3">
+                  <polygon class="clip" points="0,1200 0,0 1920,0 1920,1200"></polygon>
+                </clipPath>
+              </defs>
+              <image clip-path="url(#clipPath3)" width="1920" height="1200" xlink:href="img/i.jpg"></image>
+            </svg>
+            <div class="card__content">
+              <i class="card__btn-close fa fa-times"></i>
+              <div class="card__caption">
+                <h2 class="card__title">A mild winter</h2>
+                <p class="card__subtitle">Helen's view on wells</p>
+              </div>
+              <div class="card__copy">
+                <div class="meta">
+                  <img class="meta__avatar" src="img/authors/3.png" alt="author03" />
+                  <span class="meta__author">Sarah Lester</span>
+                  <span class="meta__date">06/16/2015</span>
+                </div>
+                <p>Business model canvas bootstrapping deployment startup. In A/B testing pivot niche market alpha conversion
+                  startup down monetization partnership business-to-consumer success for investor mass market business-to-business.</p>
+                <p>Release creative social proof influencer iPad crowdsource gamification learning curve network effects monetization.
+                  Gamification business plan mass market www.discoverartisans.com direct mailing ecosystem seed round sales
+                  long tail vesting period.</p>
+                <p>Product management ramen bootstrapping seed round venture holy grail technology backing partner network entrepreneur
+                  beta marketing value proposition. Android stealth conversion scrum project network effects. Creative alpha
+                  long tail conversion stealth growth hacking iteration investor A/B testing prototype customer. Startup
+                  www.discoverartisans.com direct mailing launch party partnership market ramen metrics focus value proposition.</p>
+                <p>Stock infrastructure seed round sales paradigm shift technology user experience focus gamification. Partnership
+                  metrics business plan stealth business-to-business. Deployment graphical user interface monetization. Twitter
+                  incubator scrum project entrepreneur branding burn rate ramen backing paradigm shift virality crowdsource.</p>
+                <p>Social proof MVP ecosystem. Ramen launch party pitch deployment stealth. Vesting period MVP equity. Focus
+                  creative partnership founders iteration agile development infographic.</p>
+                <p>Low hanging fruit burn rate innovator user experience niche market A/B testing creative launch party product
+                  management release. Www.discoverartisans.com influencer business model canvas user experience gamification
+                  paradigm shift startup research &amp; development iPad agile development. Strategy incubator infographic
+                  success marketing buzz A/B testing responsive web design. Traction research &amp; development pitch seed
+                  money venture niche market accelerator network effects.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /cards -->
+
+      <div class="name-plate-spacer"></div>
+
+      <div class="row">
+        <div class="col s12 center-align">
+          <h3 class="name-plate condensed-header">Mathew Kleppin</h3>
+        </div>
+      </div>
+
+      <div class="row center-align">
+        <div class="col s3 offset-s3">
+          <a href="https://github.com/hellsan631/">Github</a>
+        </div>
+        <div class="col s3">
+          <a href="https://www.linkedin.com/in/mathew-kleppin-b1432664">LinkedIn</a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- bower:js -->
+  <script src="vendor/gsap/src/minified/TweenMax.min.js"></script>
+  <script src="vendor/gsap/src/minified/plugins/ScrollToPlugin.min.js"></script>
+  <script src="vendor/cash/dist/cash.js"></script>
+  <!-- endinject -->
+
+  <!-- inject:js -->
+  <script src="app/trianglify.min.js"></script>
+  <script src="app/demo-4.js"></script>
+  <script src="app/Card-polygon-4.js"></script>
+  <!-- endinject -->
+</body>
 
 </html>

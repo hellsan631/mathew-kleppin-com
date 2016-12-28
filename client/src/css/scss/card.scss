@@ -1,4 +1,4 @@
-@import "../../css/scss/partials/functions";
+@import "partials/functions";
 
 .content {
   padding: 0;
@@ -9,22 +9,18 @@
 }
 
 .card-wrapper {
-  card:not(:last-child) {
-    margin-right: 15%;
+  padding-top: 5em;
+  padding-bottom: 5em;
+
+  .card:not(:last-child) {
+    margin-right: 11.5%;
   }
-}
-
-card {
-  display: inline-block;
-  position: relative;
-  padding-top: 10%;
-  width: 23%;
-  min-height: 500px;
-
+  
   .card {
-    position: absolute;
-    height: 100%;
-    width: 100%;
+    
+    background: transparent;
+    height: 500px;
+    width: 23%;
     @include materialBounce();
 
     box-shadow: 0px 2px 2px rgba(0,0,0,0.2),
@@ -36,8 +32,6 @@ card {
       0px 64px 64px rgba(0,0,0,0.2);
 
     &.open {
-      z-index: 100;
-      background: transparent;
       box-shadow: 0px 0px 0px rgba(0,0,0,0);
     }
   }

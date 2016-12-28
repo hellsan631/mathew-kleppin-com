@@ -14,8 +14,6 @@ var Card = (function(window, undefined) {
     clip: '.clip'
   };
 
-  const timeRate = 0.75;
-
   /**
    * Enum of CSS classes.
    */
@@ -41,7 +39,7 @@ var Card = (function(window, undefined) {
     this.isOpen = false;
 
     this._TL = null;
-  }
+  };
 
   /**
    * Open card.
@@ -49,7 +47,7 @@ var Card = (function(window, undefined) {
    */
   Card.prototype.openCard = function(callback) {
 
-    this._TL = new TimelineLite();
+    this._TL = new TimelineLite;
 
     var slideContentDown = this._slideContentDown();
     var clipImageIn = this._clipImageIn();
@@ -60,9 +58,9 @@ var Card = (function(window, undefined) {
     // Compose sequence and use duration to overlap tweens.
     this._TL.add(slideContentDown);
     this._TL.add(clipImageIn, 0);
-    this._TL.add(floatContainer, '-=' + clipImageIn.duration() * 0.5);
+    this._TL.add(floatContainer, '-=' + clipImageIn.duration() * 0.6);
     // this._TL.add(clipImageOut, '-=' + floatContainer.duration() * 0.3);
-    this._TL.add(slideContentUp, '-=' + clipImageOut.duration() * 0.4);
+    this._TL.add(slideContentUp/*, '-=' + clipImageOut.duration() * 0.6*/);
 
     this.isOpen = true;
 
@@ -75,7 +73,7 @@ var Card = (function(window, undefined) {
    */
   Card.prototype._slideContentDown = function() {
 
-    var tween = TweenLite.to(this._content, 0.8 * timeRate, {
+    var tween = TweenLite.to(this._content, 0.8, {
       y: window.innerHeight,
       ease: Expo.easeInOut
     });
@@ -90,7 +88,7 @@ var Card = (function(window, undefined) {
   Card.prototype._clipImageIn = function() {
 
     // Polygon.
-    var TL = new TimelineLite();
+    var TL = new TimelineLite;
 
     var start = [
       [0, 1200],
@@ -111,7 +109,7 @@ var Card = (function(window, undefined) {
     // Create a tween for each point.
     start.forEach(function(point, i) {
 
-      var tween = TweenLite.to(point, 1 * timeRate, end[i]);
+      var tween = TweenLite.to(point, 1.5, end[i]);
 
       end[i].onUpdate = function() {
 
@@ -122,7 +120,7 @@ var Card = (function(window, undefined) {
           $(this._clip).attr('points', points.join(' '));
           // Reset.
           points = [];
-        }
+        };
 
       }.bind(this);
 
@@ -132,8 +130,6 @@ var Card = (function(window, undefined) {
       TL.add(tween, 0);
 
     }, this);
-
-    this.reverseTween = TL;
 
     return TL;
   };
@@ -147,7 +143,7 @@ var Card = (function(window, undefined) {
 
     $(document.body).addClass(CLASSES.bodyHidden);
 
-    var TL = new TimelineLite();
+    var TL = new TimelineLite;
 
     var rect = this._container.getBoundingClientRect();
     var windowW = window.innerWidth;
@@ -167,7 +163,7 @@ var Card = (function(window, undefined) {
       overflow: 'hidden'
     });
 
-    TL.to([this._container, track], 1.25 * timeRate, {
+    TL.to([this._container, track], 2, {
       width: windowW,
       height: '100%',
       x: windowW / 2,
@@ -207,7 +203,7 @@ var Card = (function(window, undefined) {
    */
   Card.prototype._slideContentUp = function() {
 
-    var tween = TweenLite.to(this._content, 1 * timeRate, {
+    var tween = TweenLite.to(this._content, 1, {
       y: 0,
       clearProps: 'all',
       ease: Expo.easeInOut
@@ -221,7 +217,7 @@ var Card = (function(window, undefined) {
    */
   Card.prototype.closeCard = function() {
 
-    TweenLite.to(this._container, 0.8 * timeRate, {
+    TweenLite.to(this._container, 0.4, {
       scrollTo: {
         y: 0
       },
@@ -251,7 +247,7 @@ var Card = (function(window, undefined) {
    */
   Card.prototype.hideCard = function() {
 
-    var tween = TweenLite.to(this._el, 0.4 * timeRate, {
+    var tween = TweenLite.to(this._el, 0.4, {
       scale: 0.8,
       autoAlpha: 0,
       transformOrigin: 'center bottom',
@@ -266,7 +262,7 @@ var Card = (function(window, undefined) {
    */
   Card.prototype.showCard = function() {
 
-    var tween = TweenLite.to(this._el, 0.5 * timeRate, {
+    var tween = TweenLite.to(this._el, 0.5, {
       scale: 1,
       autoAlpha: 1,
       clearProps: 'all',
