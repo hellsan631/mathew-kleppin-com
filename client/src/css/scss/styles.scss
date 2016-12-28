@@ -20,6 +20,12 @@ h1,h2,h3,h4,h5,h6 {
 a {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  color: #aaa;
+  @include materialBounce(all, 150ms);
+
+  &:hover {
+    color: #444;
+  }
 }
 
 .material-bounce {

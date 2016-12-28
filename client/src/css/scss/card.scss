@@ -2,22 +2,20 @@
 
 .content {
   padding: 0;
-}
 
-.wrapper {
-  overflow: initial;
+  .wrapper {
+    overflow: initial;
+  }
 }
 
 .card-wrapper {
   padding-top: 5em;
-  padding-bottom: 5em;
 
   .card:not(:last-child) {
     margin-right: 11.5%;
   }
   
   .card {
-    
     background: transparent;
     height: 500px;
     width: 23%;

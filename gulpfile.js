@@ -263,8 +263,7 @@ gulp.task('build:js:vendor', function() {
     .pipe(gulp.dest(dest.jsPath));
 });
 
-gulp.task('build:js:app', ['build:js:lbservices'], function(){
-
+gulp.task('build:js:app', function(){
   return gulp.src(build.js)
     .pipe(plumber(onError))
     .pipe(sourcemaps.init())
@@ -313,7 +312,7 @@ gulp.task('move:angular', function(){
 // --------------------------------------------------------------------
 
 //Default gulp task for dev purposes
-gulp.task('default', ['watch', 'inject', 'sass', 'build:js:lbservices']);
+gulp.task('default', ['watch', 'inject', 'sass']);
 
 //Injects all css/js files into our index.html src file
 gulp.task('inject', function () {

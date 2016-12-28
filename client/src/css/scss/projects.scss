@@ -1,15 +1,18 @@
 @import "partials/functions";
 
-.name-plate {
-  display:inline-block;
-  color: #555;
-  letter-spacing: 10px;
-  padding: 10px 0;
-  border-top: 1px solid #444;
-  border-bottom: 1px solid #444;
-}
+.container {
+  .name-plate {
+    display:inline-block;
+    color: rgba(0,0,0,0.4);
+    letter-spacing: 12px;
+    padding: 10px 0;
+    border-top: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding-left: 12px;
+  }
 
-.name-plate-spacer {
-  display: block;
-  padding: 0em;
+  .name-plate-spacer {
+    display: block;
+    padding: 0.5em;
+  }
 }
