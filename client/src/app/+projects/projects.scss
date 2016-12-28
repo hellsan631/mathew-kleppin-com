@@ -1,0 +1,15 @@
+@import "../../css/scss/partials/functions";
+
+.name-plate {
+  display:inline-block;
+  color: #555;
+  letter-spacing: 10px;
+  padding: 10px 0;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+}
+
+.name-plate-spacer {
+  display: block;
+  padding: 6em;
+}

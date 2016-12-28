@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Nixie+One|Rubik');
+
 .condensed {
-  font-family: 'Avenir Next', sans-serif;
+  font-family: 'Nixie One', serif;
   letter-spacing: 2.5px;
 }
 
 .condensed-header {
-  font-family: 'Avenir Next', sans-serif;
-  letter-spacing: 2.5px;
+  font-family: 'Nixie One', serif;
+  letter-spacing: 4.5px;
   text-transform: uppercase;
 }
 
@@ -80,7 +82,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-family: 'Avenir Next', 'Roboto', sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 strong {

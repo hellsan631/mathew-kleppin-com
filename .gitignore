@@ -21,3 +21,4 @@ bower_components
 client/src/vendor
 client/src/css/**/*.css
 client/src/reload
+.vscode

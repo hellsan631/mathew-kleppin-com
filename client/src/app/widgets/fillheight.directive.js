@@ -49,6 +49,9 @@
         var elementOffsetTop = element[0].offsetTop;
         var elementBottomMarginAndBorderHeight = getBottomMarginAndBorderHeight(element);
 
+        console.log($window.innerHeight);
+        console.log($window.outerHeight);
+
         var elementHeight = $window.innerHeight - elementOffsetTop - elementBottomMarginAndBorderHeight;
         element.css('min-height', elementHeight + 'px');
       }
