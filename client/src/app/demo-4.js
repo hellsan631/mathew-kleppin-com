@@ -41,9 +41,13 @@ var demo = (function(window, undefined) {
    * Initialise demo.
    */
   function init() {
+    initBackground();
 
-    // For options see: https://github.com/qrohlf/Trianglify
-    var pattern = Trianglify({
+    _bindCards();
+  };
+
+  function initBackground() {
+    let pattern = Trianglify({
       width: window.innerWidth,
       height: window.innerHeight,
       cell_size: 100,
@@ -53,9 +57,7 @@ var demo = (function(window, undefined) {
     }).svg(); // Render as SVG.
 
     _mapPolygons(pattern);
-
-    _bindCards();
-  };
+  }
 
   /**
    * Store path elements, map coordinates and sizes.
@@ -140,7 +142,10 @@ var demo = (function(window, undefined) {
       // Open sequence.
 
       _setPatternBgImg(e.target);
-      card._el.classList.add('open');
+
+      setTimeout(() => {
+        card._el.classList.add('open');
+      }, 300);      
 
       sequence.add(tweenOtherCards);
       sequence.add(card.openCard(_onCardMove), 0);
@@ -156,7 +161,7 @@ var demo = (function(window, undefined) {
 
       setTimeout(() => {
         $('.open').removeClass('open');
-      }, 2500);
+      }, 1500);
     }
 
     sequence.play();
@@ -177,16 +182,13 @@ var demo = (function(window, undefined) {
 
       var card = layout[i].card;
 
-      card._el.classList.add('open');
+      if (card.id !== id) {
+        card._el.classList.add('open');
 
-      // When called with `openCard`.
-      if (card.id !== id && !selectedCard.isOpen) {
-        TL.add(card.hideCard(), 0);
-      }
-
-      // When called with `closeCard`.
-      if (card.id !== id && selectedCard.isOpen) {
-        TL.add(card.showCard(), 0);
+        if (!selectedCard.isOpen)
+          TL.add(card.hideCard(), 0);
+        else
+          TL.add(card.showCard(), 0);
       }
     }
 

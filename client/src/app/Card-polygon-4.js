@@ -22,6 +22,8 @@ var Card = (function(window, undefined) {
     bodyHidden: 'body--hidden'
   };
 
+  const SPEED = 0.85;
+
   /**
    * Card.
    */
@@ -58,9 +60,9 @@ var Card = (function(window, undefined) {
     // Compose sequence and use duration to overlap tweens.
     this._TL.add(slideContentDown);
     this._TL.add(clipImageIn, 0);
-    this._TL.add(floatContainer, '-=' + clipImageIn.duration() * 0.6);
-    // this._TL.add(clipImageOut, '-=' + floatContainer.duration() * 0.3);
-    this._TL.add(slideContentUp/*, '-=' + clipImageOut.duration() * 0.6*/);
+    this._TL.add(floatContainer, '-=' + clipImageIn.duration() * 0.5);
+    this._TL.add(slideContentUp, '-=' + clipImageOut.duration() * 0.8);
+    //this._TL.add(clipImageOut, '+=' + floatContainer.duration() * 0.6);
 
     this.isOpen = true;
 
@@ -73,7 +75,7 @@ var Card = (function(window, undefined) {
    */
   Card.prototype._slideContentDown = function() {
 
-    var tween = TweenLite.to(this._content, 0.8, {
+    var tween = TweenLite.to(this._content, 0.8 * SPEED, {
       y: window.innerHeight,
       ease: Expo.easeInOut
     });
@@ -109,7 +111,7 @@ var Card = (function(window, undefined) {
     // Create a tween for each point.
     start.forEach(function(point, i) {
 
-      var tween = TweenLite.to(point, 1.5, end[i]);
+      var tween = TweenLite.to(point, 1.5 * SPEED, end[i]);
 
       end[i].onUpdate = function() {
 
@@ -163,7 +165,7 @@ var Card = (function(window, undefined) {
       overflow: 'hidden'
     });
 
-    TL.to([this._container, track], 2, {
+    TL.to([this._container, track], 2 * SPEED, {
       width: windowW,
       height: '100%',
       x: windowW / 2,
@@ -203,7 +205,7 @@ var Card = (function(window, undefined) {
    */
   Card.prototype._slideContentUp = function() {
 
-    var tween = TweenLite.to(this._content, 1, {
+    var tween = TweenLite.to(this._content, 1 * SPEED, {
       y: 0,
       clearProps: 'all',
       ease: Expo.easeInOut
@@ -217,7 +219,7 @@ var Card = (function(window, undefined) {
    */
   Card.prototype.closeCard = function() {
 
-    TweenLite.to(this._container, 0.4, {
+    TweenLite.to(this._container, 0.4 * SPEED, {
       scrollTo: {
         y: 0
       },
@@ -247,7 +249,7 @@ var Card = (function(window, undefined) {
    */
   Card.prototype.hideCard = function() {
 
-    var tween = TweenLite.to(this._el, 0.4, {
+    var tween = TweenLite.to(this._el, 0.4 * SPEED, {
       scale: 0.8,
       autoAlpha: 0,
       transformOrigin: 'center bottom',
@@ -262,7 +264,7 @@ var Card = (function(window, undefined) {
    */
   Card.prototype.showCard = function() {
 
-    var tween = TweenLite.to(this._el, 0.5, {
+    var tween = TweenLite.to(this._el, 0.5 * SPEED, {
       scale: 1,
       autoAlpha: 1,
       clearProps: 'all',
