@@ -17,10 +17,15 @@ h1,h2,h3,h4,h5,h6 {
   cursor: pointer;
 }
 
+.responsive-img {
+  //width: 100%;
+  max-width: 100%;
+}
+
 a {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  color: #aaa;
+  color: #999;
   @include materialBounce(all, 150ms);
 
   &:hover {
@@ -42,45 +47,4 @@ a {
   .progress {
     margin-top: 0;
   }
-}
-
-hr {
-  border:none;
-  outline:none;
-  height:1px;
-  background: #ccc;
-}
-
-ui-view {
-  display:block;
-}
-
-ui-view[name="navbar"] {
-  max-height: 0px;
-  @include materialBounce(max-height, 200ms);
-
-  &.loggedIn {
-    max-height: 200px;
-  }
-}
-
-.medium-logo {
-  margin-top: 2em;
-  max-width: 350px;
-  opacity: 0.7;
-  display: inline-block;
-}
-
-.dashing{
-  display: inline;
-}
-
-.dashing::before, .dashing::after {
-  content: "   ";
-  height:1px;
-  width: 0.8em;
-  margin: 13px;
-  background:#a69695;
-  display: inline-block;
-  vertical-align: middle;
 }

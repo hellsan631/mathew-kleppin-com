@@ -50,7 +50,7 @@ var demo = (function(window, undefined) {
     let pattern = Trianglify({
       width: window.innerWidth,
       height: window.innerHeight,
-      cell_size: 100,
+      cell_size: 90,
       variance: 1,
       stroke_width: 1,
       x_colors: ['#fff', '#eee', '#999']
@@ -143,9 +143,7 @@ var demo = (function(window, undefined) {
 
       _setPatternBgImg(e.target);
 
-      setTimeout(() => {
-        card._el.classList.add('open');
-      }, 300);      
+      addOpenClass(card);   
 
       sequence.add(tweenOtherCards);
       sequence.add(card.openCard(_onCardMove), 0);
@@ -183,7 +181,7 @@ var demo = (function(window, undefined) {
       var card = layout[i].card;
 
       if (card.id !== id) {
-        card._el.classList.add('open');
+        addOpenClass(card, 600);
 
         if (!selectedCard.isOpen)
           TL.add(card.hideCard(), 0);
@@ -194,6 +192,10 @@ var demo = (function(window, undefined) {
 
     return TL;
   };
+
+  function addOpenClass(card, delay = 300) {
+    setTimeout(() => card._el.classList.add('open'), delay);
+  }
 
   /**
    * Add card image to pattern background.

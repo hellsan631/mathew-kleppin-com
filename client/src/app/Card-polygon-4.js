@@ -22,7 +22,7 @@ var Card = (function(window, undefined) {
     bodyHidden: 'body--hidden'
   };
 
-  const SPEED = 0.85;
+  const SPEED = 0.75;
 
   /**
    * Card.
@@ -249,7 +249,7 @@ var Card = (function(window, undefined) {
    */
   Card.prototype.hideCard = function() {
 
-    var tween = TweenLite.to(this._el, 0.4 * SPEED, {
+    var tween = TweenLite.to(this._el, 0.3 * SPEED, {
       scale: 0.8,
       autoAlpha: 0,
       transformOrigin: 'center bottom',
