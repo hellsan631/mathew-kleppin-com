@@ -15,6 +15,8 @@ var demo = (function(window, undefined) {
     cardClose: '.card__btn-close',
   };
 
+  const MED_BREAKPOINT = 1000;
+
   /**
    * Enum of CSS classes.
    */
@@ -42,15 +44,70 @@ var demo = (function(window, undefined) {
    */
   function init() {
     initBackground();
+    let interval = null;
+    let windowSize ={
+      width: window.innerWidth,
+      height: window.innerHeight
+    };
+
+    $('.card-wrapper').css('padding-top', calculateTopPadding(40));
+
+    window.onresize = () => {
+
+      if (interval) return;
+      
+      interval = setInterval(() => {
+        if (
+          windowSize.height === window.innerWidth || 
+          windowSize.width === window.innerWidth
+        ) {
+          clearInterval(interval);
+
+          $('.card-wrapper').css('padding-top', calculateTopPadding(40));
+
+          setTimeout(() => {
+            requestAnimationFrame(() => {
+              initBackground();
+              interval = null;
+            });
+          }, 200);
+
+        } else {
+          windowSize.height = window.innerWidth;
+          windowSize.width  = window.innerWidth;
+        }
+      }, 100);
+    };
 
     _bindCards();
-  };
+  }
+
+  function calculateTopPadding(percentage) {
+    let height = window.innerHeight;
+    let width  = window.innerWidth;
+    let div    = (100/percentage);
+
+    let padding = (height / div) - (500 / 2) - 30;
+
+    if (width > MED_BREAKPOINT) {
+      return `${padding}px`;
+    }
+    
+    return '1em';
+  }
 
   function initBackground() {
+
+    let cellSize = 100;
+
+    if (window.innerWidth < MED_BREAKPOINT) {
+      cellSize = 60;
+    }
+
     let pattern = Trianglify({
       width: window.innerWidth,
       height: window.innerHeight,
-      cell_size: 90,
+      cell_size: cellSize,
       variance: 1,
       stroke_width: 1,
       x_colors: ['#fff', '#eee', '#999']
@@ -67,6 +124,7 @@ var demo = (function(window, undefined) {
   function _mapPolygons(pattern) {
 
     // Append SVG to pattern container.
+    $(SELECTORS.pattern).empty();
     $(SELECTORS.pattern).append(pattern);
 
     // Convert nodelist to array,
@@ -80,19 +138,21 @@ var demo = (function(window, undefined) {
       // Hide polygons by adding CSS classes to each svg path (used attrs because of IE).
       $(polygon).attr('class', CLASSES.polygon);
 
-      var rect = polygon.getBoundingClientRect();
+      requestAnimationFrame(() => {
+        var rect = polygon.getBoundingClientRect();
 
-      var point = {
-        x: rect.left + rect.width / 2,
-        y: rect.top + rect.height / 2
-      };
+        var point = {
+          x: rect.left + rect.width / 2,
+          y: rect.top + rect.height / 2
+        };
 
-      polygonMap.points.push(point);
+        polygonMap.points.push(point);
+      });
     });
 
     // All polygons are hidden now, display the pattern container.
     $(SELECTORS.pattern).removeClass(CLASSES.patternHidden);
-  };
+  }
 
   /**
    * Bind Card elements.
@@ -148,6 +208,10 @@ var demo = (function(window, undefined) {
       sequence.add(tweenOtherCards);
       sequence.add(card.openCard(_onCardMove), 0);
 
+      setTimeout(() => {
+        $('.credits').addClass('hidden');
+      }, 1500);
+
     } else {
       // Close sequence.
 
@@ -159,6 +223,7 @@ var demo = (function(window, undefined) {
 
       setTimeout(() => {
         $('.open').removeClass('open');
+        $('.credits').removeClass('hidden');
       }, 1500);
     }
 
@@ -219,6 +284,14 @@ var demo = (function(window, undefined) {
   function _onCardMove(track) {
 
     var radius = track.width / 2;
+
+    if (window.innerWidth < MED_BREAKPOINT) {
+      radius = track.width / 1.3;
+
+      if (window.innerHeight < window.innerWidth) {
+        radius = track.width / 1.75;
+      }
+    }
 
     var center = {
       x: track.x,

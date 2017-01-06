@@ -1,14 +1,22 @@
 @import "partials/functions";
 
-.content {
-  padding: 0;
-
-  .wrapper {
-    overflow: initial;
-  }
-}
-
 .mk {
+  .content {
+    padding: 0;
+
+    .wrapper {
+      overflow: initial;
+
+      @media #{$small-and-down} {
+        width: 100%;
+      }
+
+      @media #{$medium-and-up} {
+        width: 95%;
+      }
+    }
+  }
+
   .open {
     .card__content {
       padding: 20px 30px 12px;
@@ -34,6 +42,10 @@
     .card__content  {
       width: 87%;
       max-width: 1280px;
+
+      @media only screen and (max-height: 601px) {
+        margin-top: 200px;
+      }
 
       @media #{$small-and-down} {
         width: 100%;
@@ -61,14 +73,44 @@
 .card-wrapper {
   padding-top: 5em;
 
+  .card {
+    margin-left: 0;
+  }
+
   .card:not(:last-child) {
-    margin-right: 11.5%;
+    margin-right: 0;
+
+    @media #{$large-and-up} {
+      margin-right: 6.5%;
+    }
+
+    @media #{$extra-large-and-up} {
+      margin-right: 11.5%;
+    }
   }
   
   .card {
     background: transparent;
     height: 500px;
     width: 23%;
+
+    @media #{$small-and-down} {
+      height: 350px;
+      width: 100%;
+    }
+
+    @media #{$medium-and-up} {
+      width: 100%;
+    }
+
+    @media #{$large-and-up} {
+      width: 28%;
+    }
+
+    @media #{$extra-large-and-up} {
+      width: 25%;
+    }
+
     @include materialBounce();
 
     box-shadow: 0px 2px 2px rgba(0,0,0,0.2),
@@ -82,5 +124,19 @@
     &.open {
       box-shadow: 0px 0px 0px rgba(0,0,0,0);
     }
+  }
+}
+
+.credits {
+  opacity: 1;
+
+  @include materialBounce();
+
+  &.hidden {
+    opacity: 0;
+  }
+
+  &.top {
+    margin-top: 2em;
   }
 }

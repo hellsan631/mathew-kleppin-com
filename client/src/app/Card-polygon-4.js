@@ -23,6 +23,7 @@ var Card = (function(window, undefined) {
   };
 
   const SPEED = 0.75;
+  const MED_BREAKPOINT = 1000;
 
   /**
    * Card.
@@ -106,6 +107,15 @@ var Card = (function(window, undefined) {
       [793, 570]
     ];
 
+    if (window.innerWidth < MED_BREAKPOINT) {
+      end = [
+        [916, 430],
+        [1125, 643],
+        [960, 607],
+        [793, 570]
+      ];
+    }
+
     var points = [];
 
     // Create a tween for each point.
@@ -114,15 +124,16 @@ var Card = (function(window, undefined) {
       var tween = TweenLite.to(point, 1.5 * SPEED, end[i]);
 
       end[i].onUpdate = function() {
+        requestAnimationFrame(() => {
+          points.push(point.join());
 
-        points.push(point.join());
-
-        // Every 4 point update clip-path.
-        if (points.length === end.length) {
-          $(this._clip).attr('points', points.join(' '));
-          // Reset.
-          points = [];
-        };
+          // Every 4 point update clip-path.
+          if (points.length === end.length) {
+            $(this._clip).attr('points', points.join(' '));
+            // Reset.
+            points = [];
+          }
+        });
 
       }.bind(this);
 

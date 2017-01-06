@@ -39,8 +39,19 @@
 }
 
 @media #{$small-and-down} {
+
+  .hide-on-small-only {
+    display:none;
+  }
+
   .container {
-    width: 90%;
+    width: 98%;
+  }
+}
+
+@media #{$medium-and-down} {
+  .hide-on-med-and-down {
+    display:none;
   }
 }
 
@@ -48,11 +59,19 @@
   .container {
     width: 90%;
   }
+
+  .hide-on-med-and-up {
+    display:none;
+  }
 }
 
 @media #{$large-and-up} {
   .container {
     width: 85%;
+  }
+
+  .hide-on-large-and-up {
+    display:none;
   }
 }
 
