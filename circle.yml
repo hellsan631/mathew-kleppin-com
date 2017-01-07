@@ -4,15 +4,15 @@ machine:
     DISABLE_RAVEN: true
 
   node:
-    version: 6.2.1
+    version: 6.3.0
 
 dependencies:
   cache_directories:
-    - "angular/client/src/vendor"
+    - "client/src/vendor"
 
 deployment:
   production:
     branch: master
     heroku:
-      appname: targetproof-mirror
+      appname: mathew-kleppin
 
