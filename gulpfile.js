@@ -141,7 +141,7 @@ const build = {
     sourcePath + 'app/**/*.html'
   ],
   images: [
-    sourcePath + 'images/**/*.*'
+    sourcePath + 'img/**/*.*'
   ],
   assets: [
     sourcePath + 'fonts/**/*.*'
@@ -149,7 +149,7 @@ const build = {
 };
 
 const dest = {
-  imagesPath: destPath + 'images/',
+  imagesPath: destPath + 'img/',
   assetsPath: destPath + 'fonts/',
   cssPath: destPath + 'css/',
   cssVendorFile: 'vendor.min.css',

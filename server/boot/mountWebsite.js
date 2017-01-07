@@ -5,7 +5,7 @@ const env  = process.env.NODE_ENV || 'development';
 
 module.exports = function(server) {
 
-  let mountPath = env === 'development' ? 
+  let mountPath = env === 'development' ?
     'client/src/' :
     'client/dist/';
 
