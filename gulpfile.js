@@ -217,7 +217,7 @@ gulp.task('build:clean', function() {
 
 gulp.task('build:css', ['build:css:vendor', 'build:css:app']);
 
-gulp.task('build:css:vendor', function(){
+gulp.task('build:css:vendor', function() {
   return gulp.src(bowerCSS.concat(config.inject.extraVendors.css))
     .pipe(plumber(onError))
     .pipe(concat(dest.cssVendorFile))
@@ -277,13 +277,6 @@ gulp.task('build:js:app', function(){
     }))
     .pipe(sourcemaps.write('../maps'))
     .pipe(gulp.dest(dest.jsPath));
-});
-
-gulp.task('build:js:lbservices', function() {
-  return gulp.src('./server/server.js')
-    .pipe(loopback())
-    .pipe(rename('lb-services.js'))
-    .pipe(gulp.dest('./client/src/app/core')); 
 });
 
 gulp.task('move:index', ['move:angular', 'move:images', 'move:fonts'], function(){

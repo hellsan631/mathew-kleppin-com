@@ -42,7 +42,6 @@
     "loopback": "2.29.1",
     "loopback-boot": "2.20.0",
     "loopback-component-explorer": "2.5.0",
-    "loopback-connector-mongodb": "^1.15.2",
     "loopback-datasource-juggler": "2.47.0",
     "main-bower-files": "^2.13.1",
     "node-neat": "^1.7.2",
