@@ -256,9 +256,9 @@ var demo = (function(window, undefined) {
     }
 
     return TL;
-  };
+  }
 
-  function addOpenClass(card, delay = 300) {
+  function addOpenClass(card, delay = 100) {
     setTimeout(() => card._el.classList.add('open'), delay);
   }
 
@@ -272,7 +272,7 @@ var demo = (function(window, undefined) {
     var imagePath = $(image).attr('xlink:href');
 
     $(SELECTORS.pattern).css('background-image', 'url(' + imagePath + ')');
-  };
+  }
 
   /**
    * Callback to be executed on Tween update, whatever a polygon
@@ -299,7 +299,6 @@ var demo = (function(window, undefined) {
     };
 
     polygonMap.points.forEach(function(point, i) {
-
       if (_detectPointInCircle(point, radius, center)) {
         $(polygonMap.paths[i]).attr('class', CLASSES.polygon + ' ' + CLASSES.polygonHidden);
       } else {
@@ -325,7 +324,7 @@ var demo = (function(window, undefined) {
     var isInside = Math.pow(xp - xc, 2) + Math.pow(yp - yc, 2) <= d;
 
     return isInside;
-  };
+  }
 
   // Expose methods.
   return {
