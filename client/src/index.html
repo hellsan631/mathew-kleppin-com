@@ -103,31 +103,49 @@
                 </div>
                 <div class="flow-text">
                   <p>
-                    At Magnises I worked on their main event platform, which included mobile apps (iOS and Android) and a MEAN stack web app. Over the period of a year, I rebuilt the entire stack to remove the acculated technical debt from 4 other developer studios that worked on them.
+                    At Magnises I worked on their main event platform, which included mobile apps (iOS and Android) and a MEAN stack web app. Over the period of a year, I rebuilt the entire stack to remove the accumulated technical debt from 4 other developer studios that worked on them.
                   </p>
                   <p>
                     <img src="img/magnises_macbook.jpg" class="responsive-img" />
                   </p>
                   <p>
-                    I joined Magnises as a part-time developer during the winter of 2015. At the time, they were transitioning from an internally based developement team to one that was state side, and everything was rather messy. Several developers, from different studios (and even countries), had been working on various peices of the puzzle with no central direction or coding style. I started making plans to standardize our coding style (we were a team of 4) and improve our communication with issue tracking.
+                    I joined Magnises as a part-time developer during the winter of 2015. At the time, they were transitioning from an internally based development team to one that was state side. Several developers, from different studios (and even countries), had been working on various pieces of the puzzle with no central direction or coding style. To help future development we needed to standardize our coding style (we were a team of 4 at the time) and improve our communication with issue tracking.
                   </p>
                   <p>
-                    One of the first things that was needed was to start building our test coverage. There were also no tests for any of our workflows and bugs poped up often. Our continuous integration was also prone to breaking. It a self-hosted black box that no one had access to and took anywhere from 30 to 45 minuets to deploy. 
+                    Having several developers with different coding styles is like having a book written by several different authors. Ideas can be started by one author and not followed through by the others. Likewise, a character might appear and be important in one chapter, and never appear again. It becomes very difficult to manage and developer with. Unifying coding style is not something that happens overnight. Every developer needs to be onboard, given time to adapt, and work on the same things as other developers.
                   </p>
                   <p>
-                    Over the course of the first 4 months, I wrote tests for around 60% of our workflows using AVA, and succesfully integrated CircleCI as our continous deployment service. This lowered deployment times to around 5 to 6 minuets, with included testing. This was on top of the various Angular feature development, API expansion, and solved bug reports.
+                    When I started digging deeper into the project, I noticed there were no tests for any of our workflows and bugs popped up often. Our continuous integration was prone to breaking; It a self-hosted black box that no one had access to and took anywhere from 30 to 45 minutes to deploy. The build process itself was broken off into 4 separate pieces. So if you wanted to add an external package, there were 4 separate ways you had to learn use, depending on where you wanted it to be added.
                   </p>
                   <p>
-                    It was around this time we made the move to github from bitbucket, and I was also hired as a full-time employee of the company. The move to github brought with it great issue tracking. Previously, the team was expected to keep track of their issues and tasks on a trello task board, which none of the other senior staff bothered to update.
+                    One of the first things that I insisted focusing on was building our test coverage. Over the course of the first 4 months, while working on a few feature sets, I managed to write tests for around 60% of our workflows in Node using AVA, and successfully integrated CircleCI as our continuous deployment service. This lowered deployment times to around 5 to 6 minutes, with included testing, and allowed us to start unwinding the twine of our build process.
                   </p>
                   <p>
-                    With our development staff more productive, we decided we had the time to start building a new dashboard for the main company page. The main goal was to deal with the mess of scope soup by using a web component methodology. There were also some internal issues with the design that needed to be solved on our end. 
+                    It was around this time we made the move to github from bitbucket, and I was also hired as a full-time employee of the company. The move to github brought with it great issue tracking. Previously, the team was expected to keep track of their issues and tasks on a trello task board, which was used very infrequently by everyone else.
                   </p>
                   <p>
-                    The most recent large project I worked on at Magnises was adding reservations and a payment system to events. Reservation charges had been done manually by staff, and with an expanding user-base, things were getting very costly for us. It was the most challenging thing I had done so far due to the importance that we created a system that had a robust set of options for refunds, and also integrated into several new APIs. After 2 months of working on it (which included a new set of designs), it launched as a success, allowing the company to cut costs in that area by half.
+                    With our development staff more productive, and being ahead of our development timeline, I had the time to start building a new dashboard, replacing a lot of the hacky old angular code, and standardizing our front-end coding style. My main goal was to develop reusable modules and services using a web component methodology.
+                  </p>
+                  <p> 
+                    When the ball started to get rolling on this, it became clear there were some issues with the overall brand identity of the new dashboard design. It was being done by a contracted designer from Nike, as we had lost our previous in-house designer to GQ. A large chunk of my time in free-lance was spent doing website and UI design, so this is something I wanted to take charge of. It took a little convincing to get management onboard though, but they agreed something needed to be done.
                   </p>
                   <p>
-                    One of the coolest things i've done at Magnises has been to integrate colored drop shadows, whose color was based off of the main event's image. On our new events pages, I extracted key colors in the image (most vibrant, a darker vibrant color, etc), and changed the button colors and icons on that page to create a theme arround the event.
+                    While the overall design worked for me, there were some inconsistencies in the way the components looked, which is where I focused most of my attention. Much like the way coding style effects developers above, having an inconsistent brand image causes problems with the perception of quality of our products. When you change or evolve a brand image, you want to maintain a consistent style across all of your products, so you update everything to match, with a new style guide.
+                  </p>
+                  <p>
+                    I am not usually nervous on product launches, as everything has been tested thoroughly and I'm excited to get an improved product into our users hands. When the new dashboard was completed and launched, this was not the case. In order to show things off to investors, we wanted to launch it early, so a lot of the system was put into production without much QA testing. The new design that I had worked on also needed to adapt to mobile and tablet, as about 40% of our traffic at the time was mobile. While I covered a lot of the use cases with device emulators, I was still worried about putting that into practice.
+                  </p>
+                  <p>
+                    To my relief, there were only a couple of small tweaks that needed to be made in a day-1 patch, and a week-1 patch. Because of the rigorous testing and code style I had focused on earlier in my time at magnises, the system proved to be very reliable. The dashboard was a success! With this, we could start adding more automation into our workflows, helping cut a ton of company costs.
+                  </p>
+                  <p>
+                    Since the launch of the new dashboard, the largest project we've integrated was adding reservations and a payment system to events. Reservation charges had been done manually by staff, and with an expanding user-base, things were getting very costly for us. It was the most challenging thing I had done so far due to the importance that we created a system that had a robust set of options for refunds, and also integrated into several new APIs.
+                  </p>
+                  <p>
+                    <img src="img/magnises_imac_events.jpg" class="responsive-img" />
+                  </p>
+                  <p>
+                    Because of the success of my previous design work for the dashboard, I was allowed to take the lead the design for this. We have a great marketing team at magnises, so my focus was to empower their fantastic imagery and focus on complementing it the best I could. I ended up doing some cool things with styles, pulling colors from our image and applying them to the various button/icon styles. This is done dynamically for each event and the above image shows shows it worked out really well. 
                   </p>
                 </div>
               </div>
