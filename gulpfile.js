@@ -270,7 +270,7 @@ gulp.task('build:js:app', function(){
     .pipe(babel({presets: ['es2015']}))     
     .pipe(angularSort())
     .pipe(ngAnnotate())       
-    //.pipe(uglify(jsOpts))
+    .pipe(uglify())
     .pipe(concat(dest.jsFile))
     .pipe(rename(function (path) {
       path.basename += '.' + buildId;
