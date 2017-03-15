@@ -117,8 +117,12 @@
     border-radius: 5px;
     overflow: hidden;
 
+    &:hover {
+      box-shadow: 0 1em 8em rgba(black, 0.55);
+    }
+
     &.open {
-      box-shadow: 0 1em 8em rgba(black, 0.05);
+      box-shadow: 0 0 0 rgba(black, 0);
       overflow: visible;
     }
   }
