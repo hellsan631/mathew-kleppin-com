@@ -113,10 +113,13 @@
 
     @include materialBounce();
 
-    box-shadow: 0 1em 8em rgba(black, 0.22);
+    box-shadow: 0 1em 8em rgba(black, 0.44);
+    border-radius: 5px;
+    overflow: hidden;
 
     &.open {
       box-shadow: 0 1em 8em rgba(black, 0.05);
+      overflow: visible;
     }
   }
 }
