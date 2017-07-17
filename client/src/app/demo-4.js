@@ -50,8 +50,11 @@ var demo = (function(window, undefined) {
       height: window.innerHeight
     };
 
-    $('.card-wrapper').css('padding-top', calculateTopPadding(40));
-    $('.card').css('height', calculateHeight(85));
+    let paddingTop = calculateTopPadding(40);
+    let cardHeight = calculateHeight(70, paddingTop);
+
+    $('.card-wrapper').css('padding-top', `${paddingTop}px`);
+    $('.card').css('height', `${cardHeight}px`);
 
     window.onresize = () => {
 
@@ -64,9 +67,11 @@ var demo = (function(window, undefined) {
         ) {
           clearInterval(interval);
 
-          $('.card-wrapper').css('padding-top', calculateTopPadding(40));
+          paddingTop = calculateTopPadding(40);
+          cardHeight = calculateHeight(85, paddingTop);
 
-          $('.card').css('height', calculateHeight(85));
+          $('.card-wrapper').css('padding-top', `${paddingTop}px`);
+          $('.card').css('height', `${cardHeight}px`);
 
           setTimeout(() => {
             requestAnimationFrame(() => {
@@ -90,27 +95,33 @@ var demo = (function(window, undefined) {
     let width  = window.innerWidth;
     let div    = (100/percentage);
 
-    let padding = (height / div) - (500 / 2) - 30;
+    let padding = (height / div) - (500 / 2) - 20;
 
     if (width > MED_BREAKPOINT) {
-      return `${padding}px`;
+      return padding;
     }
     
-    return '1em';
+    return 100;
   }
 
-  function calculateHeight(percentage) {
+  function calculateHeight(percentage, paddingTop) {
     let height = window.innerHeight;
     let width  = window.innerWidth;
     let div    = (100/percentage);
 
-    let boxHeght = (height / div) - (500 / 2) - 30;
+    let boxHeight = (height / div) - (paddingTop * 2) - 100;
+
+    if (boxHeight > 500) {
+      boxHeight = 500;
+    }
+
+    console.log(boxHeight, paddingTop);
 
     if (width > MED_BREAKPOINT) {
-      return `${boxHeght}px`;
+      return boxHeight;
     }
     
-    return '300px';
+    return 300;
   }
 
   function initBackground() {
