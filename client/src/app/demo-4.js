@@ -68,7 +68,7 @@ var demo = (function(window, undefined) {
           clearInterval(interval);
 
           paddingTop = calculateTopPadding(40);
-          cardHeight = calculateHeight(85, paddingTop);
+          cardHeight = calculateHeight(70, paddingTop);
 
           $('.card-wrapper').css('padding-top', `${paddingTop}px`);
           $('.card').css('height', `${cardHeight}px`);
@@ -109,7 +109,7 @@ var demo = (function(window, undefined) {
     let width  = window.innerWidth;
     let div    = (100/percentage);
 
-    let boxHeight = (height / div) - (paddingTop * 2) - 100;
+    let boxHeight = (height / div) - (paddingTop) - 100;
 
     if (boxHeight > 500) {
       boxHeight = 500;
