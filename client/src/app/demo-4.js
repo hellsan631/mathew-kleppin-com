@@ -51,6 +51,7 @@ var demo = (function(window, undefined) {
     };
 
     $('.card-wrapper').css('padding-top', calculateTopPadding(40));
+    $('.card').css('height', calculateHeight(85));
 
     window.onresize = () => {
 
@@ -64,6 +65,8 @@ var demo = (function(window, undefined) {
           clearInterval(interval);
 
           $('.card-wrapper').css('padding-top', calculateTopPadding(40));
+
+          $('.card').css('height', calculateHeight(85));
 
           setTimeout(() => {
             requestAnimationFrame(() => {
@@ -94,6 +97,20 @@ var demo = (function(window, undefined) {
     }
     
     return '1em';
+  }
+
+  function calculateHeight(percentage) {
+    let height = window.innerHeight;
+    let width  = window.innerWidth;
+    let div    = (100/percentage);
+
+    let boxHeght = (height / div) - (500 / 2) - 30;
+
+    if (width > MED_BREAKPOINT) {
+      return `${boxHeght}px`;
+    }
+    
+    return '300px';
   }
 
   function initBackground() {
