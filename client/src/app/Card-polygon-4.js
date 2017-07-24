@@ -260,6 +260,8 @@ var Card = (function(window, undefined) {
    */
   Card.prototype.hideCard = function() {
 
+    this.savedHeight = $(this._el).innerHeight();
+
     var tween = TweenLite.to(this._el, 0.3 * SPEED, {
       scale: 0.8,
       autoAlpha: 0,
@@ -275,14 +277,26 @@ var Card = (function(window, undefined) {
    */
   Card.prototype.showCard = function() {
 
-    var tween = TweenLite.to(this._el, 0.5 * SPEED, {
-      scale: 1,
-      autoAlpha: 1,
-      clearProps: 'all',
-      ease: Expo.easeInOut
-    });
+    var tl = new TimelineLite();
 
-    return tween;
+    tl.add(
+      TweenLite.to(this._el, 0.5 * SPEED, {
+        scale: 1,
+        autoAlpha: 1,
+        height: this.savedHeight+"px",
+        clearProps: 'all',
+        ease: Expo.easeInOut
+      })
+    );
+
+    tl.add(
+      TweenLite.to(this._el, 1 * SPEED, {
+        height: this.savedHeight+"px",
+        ease: Expo.easeInOut
+      })
+    );
+
+    return tl;
   };
 
   return Card;
